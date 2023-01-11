@@ -1,30 +1,23 @@
-// document.body.children[1].children[0].href = 'https://google.com';
+let paragraphElement = document.querySelector('p');
 
-// console.dir(document);
-// alert();
-// window.alert();
+function chageParagraphText() {
+    paragraphElement.textContent = 'Clicked!';
+    console.log('Clicked!');
+}
 
-let anchorElement = document.getElementById('external-link');
-anchorElement.href = 'https://google.com';
+paragraphElement.addEventListener('click', chageParagraphText);
 
-anchorElement = document.querySelector('p a'); // p a { color: red; }
-anchorElement.href = 'https://academind.com';
+let inputElement = document.querySelector('input');
 
-// ADD AN ELEMENT
-// 1. Create the new element
+function reUserInput(){
+    let enteredtText = inputElement.value;
+    console.log(enteredtText)
 
-let newAnchorElement = document.createElement('a');
-newAnchorElement.href = 'https://google.com';
-newAnchorElement.textContent = 'This leads to Google!';
+}
 
-// 2. Get access to the parent element that should hold the new element
+// function reUserInput(Event){
+//     let enteredtText = Event.data;
+//     console.log(enteredtText)
+// }
 
-let firstParagraph = document.querySelector('p');
-
-// 3. Insert the new element into the parent element content
-
-firstParagraph.append(newAnchorElement);
-
-// let newAnchorElement = document.createElement('a');
-// newAnchorElement.href = 'http://naver.com';
-// newAnchorElement.textContent = 'This is naverWebPage'
+inputElement.addEventListener('input',reUserInput);
